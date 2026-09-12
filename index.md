@@ -2,20 +2,13 @@
 layout: default
 ---
 <div class="home">
-{% if page.title %}
-<h1 class="page-heading">{{ page.title }}</h1>
-{% endif %}
-
-{{ content }}
-
-{% if paginator.posts.size > 0 %}
+{% if paginator.posts %}
 
 <ul class="post-list">
 
   {% for post in paginator.posts %}
 
     <li>
-
       <h3>
         <a class="post-link" href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
@@ -63,7 +56,7 @@ layout: default
 
       {% else %}
 
-        <a href="{{ site.paginate_path | replace: ':num', page }}">
+        <a href="{{ site.paginate_path | replace: ':num', page | relative_url }}">
           {{ page }}
         </a>
 
@@ -80,6 +73,10 @@ layout: default
   </div>
 
 {% endif %}
+
+{% else %}
+
+<p>Nenhum post encontrado.</p>
 
 {% endif %}
 
