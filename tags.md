@@ -2,7 +2,6 @@
 layout: default
 title: Tags
 permalink: /tags/
-Tags
 ---
 
 <div class="tags-page"> <span>🏷️ Tags</span>
