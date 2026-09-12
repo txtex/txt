@@ -5,3 +5,10 @@ google_analytics:
 theme: jekyll-theme-hacker
 # paginate: 30
 # paginate_path: "/page:num/"
+url: "txtex.github.io" # Substitua pelo seu link do GitHub Pages
+baseurl: "" # Deixe em branco se for o repositório principal (seu-usuario.github.io)
+
+# Ativa os plugins nativos do GitHub Pages
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
