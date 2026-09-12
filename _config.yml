@@ -2,6 +2,8 @@ title: TXT Downloads
 description: Blog com downloads via torrents e magnetlinks.
 show_downloads: false
 google_analytics:
+bing_clarity: yhd832oq7d
+
 theme: jekyll-theme-hacker
 # paginate: 30
 # paginate_path: "/page:num/"
