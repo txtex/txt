@@ -4,4 +4,4 @@ show_downloads: false
 google_analytics:
 theme: jekyll-theme-hacker
 paginate: 30
-paginate_path: "/page:num/"
+# paginate_path: "/page:num/"
