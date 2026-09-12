@@ -1,87 +1,86 @@
 ---
 layout: default
 ---
-<div class="home"> {%- if page.title -%} <h1 class="page-heading">{{ page.title }}</h1> {%- endif -%}
-{{ content }}
-
-{% if site.paginate %}
-{% assign posts = paginator.posts %}
-{% else %}
-{% assign posts = site.posts %}
+<div class="home">
+{% if page.title %}
+<h1 class="page-heading">{{ page.title }}</h1>
 {% endif %}
 
-{%- if posts.size > 0 -%}
-{%- if page.list_title -%}
-<h2 class="post-list-heading">{{ page.list_title }}</h2>
-{%- endif -%}
+{{ content }}
+
+{% if paginator.posts.size > 0 %}
 
 <ul class="post-list">
-  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
-  {%- for post in posts -%}
-  <li>
-    <!-- <span class="post-meta">{{ post.date | date: date_format }}</span> -->
+  {% for post in paginator.posts %}
 
-    <h3>
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
-      </a>
-    </h3>
+    <li>
 
-    {%- if post.tags -%}
-      <div class="post-tags">
-        🏷️
-        {%- for tag in post.tags -%}
-          <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">
-            {{ tag }}
-          </a>{% unless forloop.last %}, {% endunless %}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
 
-    {%- if site.minima.show_excerpts -%}
-      {{ post.excerpt }}
-    {%- endif -%}
-  </li>
-  {%- endfor -%}
+      {% if post.tags %}
+        <div class="post-tags">
+          🏷️
+          {% for tag in post.tags %}
+            <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">
+              {{ tag }}
+            </a>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+    </li>
+
+  {% endfor %}
+
 </ul>
 
-{% if site.paginate %}
+{% if paginator.total_pages > 1 %}
+
   <div class="pager">
-    <ul class="pagination">
 
-    {%- if paginator.previous_page %}
-      <li>
-        <a href="{{ paginator.previous_page_path | relative_url }}"
-           class="previous-page"
-           title="Go to Page {{ paginator.previous_page }}">
-          {{ paginator.previous_page }}
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}">
+        ← Anterior
+      </a>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+
+      {% if page == paginator.page %}
+
+        <strong>{{ page }}</strong>
+
+      {% elsif page == 1 %}
+
+        <a href="{{ '/' | relative_url }}">
+          {{ page }}
         </a>
-      </li>
-    {%- else %}
-      <li><div class="pager-edge">•</div></li>
-    {%- endif %}
 
-      <li>
-        <div class="current-page">{{ paginator.page }}</div>
-      </li>
+      {% else %}
 
-    {%- if paginator.next_page %}
-      <li>
-        <a href="{{ paginator.next_page_path | relative_url }}"
-           class="next-page"
-           title="Go to Page {{ paginator.next_page }}">
-          {{ paginator.next_page }}
+        <a href="{{ site.paginate_path | replace: ':num', page }}">
+          {{ page }}
         </a>
-      </li>
-    {%- else %}
-      <li><div class="pager-edge">•</div></li>
-    {%- endif %}
 
-    </ul>
+      {% endif %}
+
+    {% endfor %}
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}">
+        Próxima →
+      </a>
+    {% endif %}
+
   </div>
-{%- endif %}
 
-{%- endif -%}
+{% endif %}
+
+{% endif %}
 
 </div>
