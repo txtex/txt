@@ -77,19 +77,32 @@ header h1 {
 }
 
 header h1:before {
-  content: "\1F9F2 ";           /* Código Unicode para o ímã 🧲 */
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 8px;
+  vertical-align: middle;
+  mix-blend-mode: multiply;
+}
+/*
+header h1:before {
+  content: "\1F9F2 ";           
   font-size: 24px;
   vertical-align: middle;
   margin-right: 6px;
 }
 
-/*
+
 header h1:before {
   content: "./ ";
   font-size: 24px;
-}*/
+}
 
-/*
 header h1:before {
   content: "";
   display: inline-block;
