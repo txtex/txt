@@ -15,5 +15,5 @@ permalink: /:title/
 
 # Ativa os plugins nativos do GitHub Pages
 plugins:
-  - jekyll-sitemap
+#  - jekyll-sitemap
   - jekyll-feed
