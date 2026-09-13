@@ -76,10 +76,23 @@ header h1 {
   }
 }
 
-
+/*
 header h1:before {
   content: "./ ";
   font-size: 24px;
+}*/
+
+header h1:before {
+  content: "";
+  display: inline-block;
+  width: 32px;                   /* Ajuste para a largura desejada da imagem */
+  height: 32px;                  /* Ajuste para a altura desejada da imagem */
+  background-image: url("../images/logo.png");
+  background-size: contain;      /* Garante que a imagem se ajuste ao tamanho definido */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 8px;             /* Espaço entre a imagem e o título TXT Downloads */
+  vertical-align: middle;        /* Alinha a imagem verticalmente com o texto */
 }
 
 header h2 {
