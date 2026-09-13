@@ -1,13 +1,14 @@
 title: TXT Downloads
 description: Blog com downloads via torrents e magnetlinks.
 show_downloads: false
+
 google_analytics:
-bing_clarity: yhd832oq7d
+bing_clarity: 
 
 theme: jekyll-theme-hacker
 # paginate: 30
 # paginate_path: "/page:num/"
-url: "txtex.github.io" # Substitua pelo seu link do GitHub Pages
+url: "https://txtex.github.io" # Substitua pelo seu link do GitHub Pages
 baseurl: "" # Deixe em branco se for o repositório principal (seu-usuario.github.io)
 
 permalink: /:title/
