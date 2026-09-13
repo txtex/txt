@@ -2,8 +2,8 @@ title: TXT Downloads
 description: Blog com downloads via torrents e magnetlinks.
 show_downloads: false
 
-google_analytics:
-bing_clarity: 
+google_analytics: #
+bing_clarity:  #
 
 theme: jekyll-theme-hacker
 # paginate: 30
