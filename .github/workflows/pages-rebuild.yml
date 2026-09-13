@@ -1,7 +1,7 @@
 name: Rebuild GitHub Pages
 
 on:
-  workflow_dispatch:   # j permite rodar manualmente
+  workflow_dispatch:   # permite rodar manualmente
   push:                # roda em qualquer push
     branches:
       - main           # ajuste para a branch usada no GitHub Pages
