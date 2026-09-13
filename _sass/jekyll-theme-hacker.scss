@@ -76,12 +76,20 @@ header h1 {
   }
 }
 
+header h1:before {
+  content: "\1F9F2 ";           /* Código Unicode para o ímã 🧲 */
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
 /*
 header h1:before {
   content: "./ ";
   font-size: 24px;
 }*/
 
+/*
 header h1:before {
   content: "";
   display: inline-block;
@@ -95,7 +103,7 @@ header h1:before {
   vertical-align: middle;        /* Alinha a imagem verticalmente com o texto */
   mix-blend-mode: multiply;
 }
-
+*/
 header h2 {
   font-size: 18px;
   font-weight: 300;
