@@ -91,7 +91,7 @@ header h1:before {
 }
 /*
 header h1:before {
-  content: "\1F9F2 ";           
+  content: "\1F9F2";           
   font-size: 24px;
   vertical-align: middle;
   margin-right: 6px;
@@ -106,9 +106,9 @@ header h1:before {
 header h1:before {
   content: "";
   display: inline-block;
-  width: 32px;                   /* Ajuste para a largura desejada da imagem */
-  height: 32px;                  /* Ajuste para a altura desejada da imagem */
-  background-image: url("../images/logo.jpg");
+  width: 28px;                   /* Ajuste para a largura desejada da imagem */
+  height: 28px;                  /* Ajuste para a altura desejada da imagem */
+  background-image: url("../images/logo.png");
   background-size: contain;      /* Garante que a imagem se ajuste ao tamanho definido */
   background-repeat: no-repeat;
   background-position: center;
