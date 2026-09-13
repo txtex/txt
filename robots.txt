@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://txtex.github.io/sitemap.xml
